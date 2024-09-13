@@ -12,5 +12,10 @@ chmod +x setup.sh
 ./setup.sh
 
 ```
+## Running Instructions
+### Matlab
+- The Matlab scripts are located in `matlab/`. Each script corresponds to a figure in the paper. To execute a script, open it in Matlab and run all the sections to get the figures. 
+- We provide pre-processed data (permittivity, lightness, and oven-based volumetric water content) associated with the scripts.
+- The scripts contains the mathematical models described in the papar.
 
  
