@@ -2,9 +2,7 @@ import torch
 import os, glob
 import random, csv
 
-# import visdom
 from torch.utils.data import Dataset, DataLoader
-# import torchvision
 from torchvision import transforms
 from PIL import Image
 
@@ -237,10 +235,7 @@ class Carbon(Dataset):
 
 
 def main():
-    import visdom
     import time
-
-    # viz = visdom.Visdom(use_incoming_socket=False)
     
     # using self implemented Dataset class
     db = Carbon('soil_combined', 224, 'train')
@@ -253,29 +248,6 @@ def main():
 
     loader = DataLoader(db, batch_size=32, shuffle=True)
 
-    # for x, y in loader:
-    #     viz.images(db.denormalize(x), nrow=8, win='batch', opts=dict(title='batch'))
-    #     viz.text(str(y.numpy()), win='label', opts=dict(title='batch_y'))
-
-    #     time.sleep(10)
-
-
-    # # using torchvision.datasets.ImageFolder
-    # tf = transforms.Compose([
-    #     transforms.Resize((64, 64)),
-    #     transforms.ToTensor(),
-    #     ])
-    #
-    # db = torchvision.datasets.ImageFolder(root='pokemon', transform=tf)
-    # loader = DataLoader(db, batch_size=32, shuffle=True, num_workers=)
-    #
-    # print(db.class_to_idx)
-    #
-    # for x, y in loader:
-    #     viz.images(x, nrow=8, win='batch', opts=dict(title='batch'))
-    #     viz.text(str(y.numpy()), win='label', opts=dict(title='batch_y'))
-    #
-    #     time.sleep(10)
 
 if __name__ == '__main__':
     main()
