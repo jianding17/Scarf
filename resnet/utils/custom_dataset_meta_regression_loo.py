@@ -31,7 +31,7 @@ class Carbon(Dataset):
 
                 
 
-        print(self.name2label)
+        # print(self.name2label)
 
         self.moisture2label = {}
         
@@ -60,8 +60,8 @@ class Carbon(Dataset):
                 wifi_images += sorted(glob.glob(os.path.join(self.root, name, subclass, '*.jpg')))
                 wifi_images += glob.glob(os.path.join(self.root, name, subclass, '*.jpeg'))
 
-            print(len(images), images)
-            print(len(wifi_images), wifi_images)
+            # print(len(images), images)
+            # print(len(wifi_images), wifi_images)
 
             # load meta data
             meta_data_all = []
@@ -73,7 +73,7 @@ class Carbon(Dataset):
                     oc = float(row_new[1])
                     vwc = float(row_new[2])
                     meta_data_all.append([e, oc, vwc])
-            print(len(meta_data_all))
+            # print(len(meta_data_all))
 
             # for img in images:
             for i in range(len(images)):
@@ -82,8 +82,8 @@ class Carbon(Dataset):
                 moisture = img_name[0:5]
                 if moisture not in self.moisture2label.keys():
                     self.moisture2label[moisture] = len(self.moisture2label.keys())
-            print(len(self.moisture2label.keys()))
-            print(self.moisture2label)
+            # print(len(self.moisture2label.keys()))
+            # print(self.moisture2label)
         
             moisture_idxs = list(range(len(self.moisture2label.keys())))
             random.shuffle(moisture_idxs)
@@ -96,8 +96,8 @@ class Carbon(Dataset):
             #     train_moisture_idxs = moisture_idxs[:int(0.75 * len(moisture_idxs))]
             valid_moisture_idxs = [i for i in moisture_idxs]
             train_moisture_idxs = []
-            print(sorted(train_moisture_idxs))
-            print(sorted(valid_moisture_idxs))
+            # print(sorted(train_moisture_idxs))
+            # print(sorted(valid_moisture_idxs))
             train_images, train_wifi_images, train_labels = [], [], []
             val_images, val_wifi_images, val_labels = [], [], []
             train_meta, val_meta = [], []
