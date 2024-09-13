@@ -29,7 +29,7 @@ cd resnet
 python3 run_ml_model_test.py
 python3 run_math_and_ml_model_test.py
 ```
-
+- The scripts will print the correlation, R2, and MSE for the given testing dataset. NOTE: the results may look better than those in Table 4, this is because the testing dataset here is only a random sample, while Table 4 has averaged over 5 random samples.
 
 
  
